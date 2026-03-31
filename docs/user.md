@@ -105,9 +105,9 @@ Response Body Error:
 ```json
 {
 	"status":  "error",
-	"message": "Invalid data format,
+	"message": "Invalid data format",
 }
-
+```
 
 ## List user API
 

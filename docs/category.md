@@ -100,6 +100,8 @@ Response Body Error:
 	"status":  "error",
 	"message": "Category not found",
 }
+```
+
 ```json
 {
 	"status":  "error",
