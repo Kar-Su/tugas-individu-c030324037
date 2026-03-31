@@ -61,7 +61,7 @@ Response Body Error:
 
 ## Update user API
 
-Endpoint : PUT /localhost/api/user/<id>
+Endpoint : PUT /localhost/api/user/(id)
 
 Headers :
 
@@ -113,7 +113,7 @@ Response Body Error:
 
 ## List user API
 
-Endpoint : GET /api/api/user
+Endpoint : GET /localhost/api/user
 
 Headers :
 
@@ -162,7 +162,7 @@ Response Body Error:
 	"message": "Failed to retrieve data user",
 }
 ```
-Endpoint : GET /api/api/user/<id>
+Endpoint : GET /localhost/api/user/(id)
 
 Headers :
 
@@ -199,7 +199,7 @@ Response Body Error:
 
 ## Remove user API
 
-Endpoint : DELETE /localhost/api/user/<id>
+Endpoint : DELETE /localhost/api/user/(id)
 
 Headers :
 

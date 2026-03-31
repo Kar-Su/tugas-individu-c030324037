@@ -60,7 +60,7 @@ Response Body Error:
 
 ## Update order API
 
-Endpoint : PUT /localhost/api/order/<id>
+Endpoint : PUT /localhost/api/order/(id)
 
 Headers :
 
@@ -113,7 +113,7 @@ Response Body Error:
 
 ## List order API
 
-Endpoint : GET /api/api/order
+Endpoint : GET /api/order
 
 Headers :
 
@@ -157,7 +157,7 @@ Response Body Error:
 	"message": "Failed to retrieve data order",
 }
 ```
-Endpoint : GET /api/api/order/<id>
+Endpoint : GET /api/order/(id)
 
 Headers :
 
@@ -195,7 +195,7 @@ Response Body Error:
 
 ## Remove order API
 
-Endpoint : DELETE /localhost/api/order/<id>
+Endpoint : DELETE /localhost/api/order/(id)
 
 Headers :
 

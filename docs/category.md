@@ -59,7 +59,7 @@ Response Body Error:
 
 ## Update category API
 
-Endpoint : PUT /localhost/api/category/<id>
+Endpoint : PUT /localhost/api/category/(id)
 
 Headers :
 
@@ -111,7 +111,7 @@ Response Body Error:
 
 ## List category API
 
-Endpoint : GET /api/api/category
+Endpoint : GET /localhost/api/category
 
 Headers :
 
@@ -147,7 +147,7 @@ Response Body Error:
 	"message": "Failed to retrieve data categories",
 }
 ```
-Endpoint : GET /api/api/category/<id>
+Endpoint : GET /localhost/api/category/(id)
 
 Headers :
 
@@ -183,7 +183,7 @@ Response Body Error:
 
 ## Remove category API
 
-Endpoint : DELETE /localhost/api/category/<id>
+Endpoint : DELETE /localhost/api/category/(id)
 
 Headers :
 

@@ -67,7 +67,7 @@ Response Body Error:
 
 ## Update menu API
 
-Endpoint : PUT /localhost/api/menu/<id>
+Endpoint : PUT /localhost/api/menu/(id)
 
 Headers :
 
@@ -122,7 +122,7 @@ Response Body Error:
 
 ## List menu API
 
-Endpoint : GET /api/api/menu
+Endpoint : GET /localhost/api/menu
 
 Headers :
 
@@ -170,7 +170,7 @@ Response Body Error:
 	"message": "Failed to retrieve data menu",
 }
 ```
-Endpoint : GET /api/api/menu/<id>
+Endpoint : GET /localhost/api/menu/(id)
 
 Headers :
 
@@ -212,7 +212,7 @@ Response Body Error:
 
 ## Remove menu API
 
-Endpoint : DELETE /localhost/api/menu/<id>
+Endpoint : DELETE /localhost/api/menu/(id)
 
 Headers :
 
