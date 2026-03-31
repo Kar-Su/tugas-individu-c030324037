@@ -1,7 +1,6 @@
 <?php
 namespace Controllers;
 
-// 1. Load dependencies & Model secara manual (Pola seed.php)
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../models/user.php";
 require_once __DIR__ . "/../configs/databaseConfig.php";
