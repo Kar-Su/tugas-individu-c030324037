@@ -112,6 +112,7 @@ Response Body Error:
 	"status":  "error",
 	"message": "menu not found",
 }
+```
 ```json
 {
 	"status":  "error",

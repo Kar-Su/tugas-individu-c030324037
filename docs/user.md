@@ -102,6 +102,8 @@ Response Body Error:
 	"status":  "error",
 	"message": "user not found",
 }
+```
+
 ```json
 {
 	"status":  "error",
