@@ -1,0 +1,5 @@
+*.env
+.docker/mysql/data/*
+.docker/mysql/logs/*
+vendor/
+*tmp/*
