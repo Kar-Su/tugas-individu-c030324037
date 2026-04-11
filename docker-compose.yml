@@ -21,41 +21,59 @@ services:
 
   golang_api:
     # Saya tidak butuh build karena di local sudah pernah membuatnya di project lain
-    image: web-hosting-golang:latest
+    image: go-air:1.26
     # Gunakan build jika bapak mau mencoba
     # build: ./.docker/golang.Dockerfile
     container_name: tugas_api_go
     restart: unless-stopped
     env_file:
       - .env
-      - ./internal/golang/.env
+      # - ./internal/golang/.env
     working_dir: /golang
     volumes:
       - ./internal/golang/:/golang
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.go-router.rule=PathPrefix(`/api/menu`) || PathPrefix(`/api/category`)"
-      - "traefik.http.routers.go-router.entrypoints=web"
+      - "traefik.http.routers.go-router-api.rule=PathPrefix(`/api/menu`) || PathPrefix(`/api/category`)"
+      - "traefik.http.routers.go-router-api.entrypoints=web"
       - "traefik.http.services.go-service.loadbalancer.server.port=8080"
     networks:
       - tugas_api_network
 
   php_api:
-    build:
-      context: .
-      dockerfile: .docker/php-apache.Dockerfile
+    image: php-apache:8.2
+    # build:
+    #   context: .
+    #   dockerfile: .docker/php-apache.Dockerfile
     container_name: tugas_api_php
     restart: unless-stopped
     env_file:
       - .env
-      - ./internal/php/.env
+      # - ./internal/php/.env
     volumes:
       - ./internal/php:/var/www/html
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.php-router.rule=PathPrefix(`/api/order`) || PathPrefix(`/api/user`)"
-      - "traefik.http.routers.php-router.entrypoints=web"
+      - "traefik.http.routers.php-router-api.rule=PathPrefix(`/api/order`) || PathPrefix(`/api/user`) || PathPrefix(`/dashboard`)"
+      - "traefik.http.routers.php-router-api.entrypoints=web"
       - "traefik.http.services.php-service.loadbalancer.server.port=80"
+    networks:
+      - tugas_api_network
+
+  php_frontend:
+    image: php-apache:8.2
+    container_name: tugas_api_frontend
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./internal/frontend:/var/www/html/public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.php-frontend.rule=Host(`localhost`) || PathPrefix(`/`)"
+      - "traefik.http.routers.php-frontend.entrypoints=web"
+      - "traefik.http.routers.php-frontend.priority=1"
+      - "traefik.http.services.php-frontend-service.loadbalancer.server.port=80"
     networks:
       - tugas_api_network
 

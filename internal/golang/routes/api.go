@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"c030324037/go-api/auth"
 	"c030324037/go-api/controllers"
 
 	"github.com/gofiber/fiber/v2"
@@ -14,15 +13,25 @@ func ApiRoutes(app *fiber.App) {
 	menu := api.Group("/menu")
 	menu.Get("/", controllers.GetMenu)
 	menu.Get("/:id", controllers.GetMenuById)
-	menu.Post("/", auth.JWT("Admin"), controllers.CreateMenu)
-	menu.Put("/:id", auth.JWT("Admin"), controllers.UpdateMenu)
-	menu.Delete("/:id", auth.JWT("Admin"), controllers.DeleteMenu)
+	menu.Post("/", controllers.CreateMenu)
+	menu.Put("/:id", controllers.UpdateMenu)
+	menu.Delete("/:id", controllers.DeleteMenu)
+	// menu.Get("/", controllers.GetMenu)
+	// menu.Get("/:id", controllers.GetMenuById)
+	// menu.Post("/", auth.JWT("Admin"), controllers.CreateMenu)
+	// menu.Put("/:id", auth.JWT("Admin"), controllers.UpdateMenu)
+	// menu.Delete("/:id", auth.JWT("Admin"), controllers.DeleteMenu)
 
 	// Category
 	category := api.Group("/category")
 	category.Get("/", controllers.GetCategories)
 	category.Get("/:id", controllers.GetCategoriesById)
-	category.Post("/", auth.JWT("Admin"), controllers.CreateCategory)
-	category.Put("/:id", auth.JWT("Admin"), controllers.UpdateCategory)
-	category.Delete("/:id", auth.JWT("Admin"), controllers.DeleteCategory)
+	category.Post("/", controllers.CreateCategory)
+	category.Put("/:id", controllers.UpdateCategory)
+	category.Delete("/:id", controllers.DeleteCategory)
+	// category.Get("/", controllers.GetCategories)
+	// category.Get("/:id", controllers.GetCategoriesById)
+	// category.Post("/", auth.JWT("Admin"), controllers.CreateCategory)
+	// category.Put("/:id", auth.JWT("Admin"), controllers.UpdateCategory)
+	// category.Delete("/:id", auth.JWT("Admin"), controllers.DeleteCategory)
 }

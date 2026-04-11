@@ -14,6 +14,12 @@ if ($uriSegments[0] !== "api") {
         "message" => "Not Found. Please use the /api prefix.",
     ]);
     exit();
+<<<<<<< HEAD
+=======
+} elseif ($uriSegments[0] === "dashboard") {
+    require_once __DIR__ . "/../dashboard/index.php";
+    exit();
+>>>>>>> 86532a0 (feat(frontend): make crud frontend)
 }
 $resource = $uriSegments[1] ?? null;
 $id = $uriSegments[2] ?? null;
